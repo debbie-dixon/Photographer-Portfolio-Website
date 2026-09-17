@@ -1,33 +1,72 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import DynamicIcons from "./DynamicIcons";
 import SideMenu from "./SideMenu";
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
   const closeMenu = () => setIsOpen(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const scrollDelta = currentScrollY - lastScrollY.current;
+
+      if (currentScrollY <= 16) {
+        setIsVisible(true);
+        lastScrollY.current = currentScrollY;
+        return;
+      }
+
+      if (Math.abs(scrollDelta) < 8) return;
+
+      setIsVisible(scrollDelta > 0);
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-      <nav className="flex justify-between items-center gap-4 p-4 sticky top-0 left-0 w-full bg-white shadow-sm mx-auto z-50">
-        <p className="font-serif italic font-bold text-2xl">Logo</p>
-        <div className="hidden md:flex gap-4 font-sans items-center">
-          <a href="/" className="px-2 py-1 rounded-md">
+      <nav
+        className={`flex justify-between items-center gap-4 py-4 px-6 sticky top-0 left-0 w-full bg-[#c4bab3] shadow-sm mx-auto z-50 transition-transform duration-300 ${
+          isVisible ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
+        <p className="font-serif italic font-bold text-2xl text-[#502108]">
+          Logo
+        </p>
+        <div className="hidden md:flex gap-4 font-sans font-semibold items-center">
+          <a href="/" className="px-2 py-1 hover:bg-[#502108] hover:text-white">
             Home
           </a>
-          <a href="#about" className="px-2 py-1 rounded-md">
+          <a
+            href="#about"
+            className="px-2 py-1 hover:bg-[#502108] hover:text-white"
+          >
             About
           </a>
-          <a href="#services" className="px-2 py-1 rounded-md">
+          <a
+            href="#services"
+            className="px-2 py-1 hover:bg-[#502108] hover:text-white"
+          >
             Services
           </a>
-          <a href="#contact" className="px-2 py-1 rounded-md">
+          <a
+            href="#contact"
+            className="px-2 py-1 hover:bg-[#502108] hover:text-white"
+          >
             Contact
           </a>
-          <a
-            href="#book"
-            className="px-6 py-2.5 tracking-wide rounded-md bg-gray-400"
-          >
-            Book Us
-          </a>
         </div>
+        <a
+          href="#book"
+          className="px-4 py-2 tracking-wide  text-white font-bold bg-[#502108]"
+        >
+          Book Now
+        </a>
         <button
           onClick={() => setIsOpen(true)}
           className="md:hidden text-tColor p-2 focus:outline-none"
