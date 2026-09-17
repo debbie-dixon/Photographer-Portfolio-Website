@@ -35,7 +35,7 @@ export default function NavBar() {
           isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <p className="font-serif italic font-bold text-2xl text-[#502108]">
+        <p className="font-serif italic px-6 font-bold text-2xl text-[#502108]">
           Logo
         </p>
         <div className="hidden md:flex gap-4 font-sans font-semibold items-center">
@@ -63,13 +63,13 @@ export default function NavBar() {
         </div>
         <a
           href="#book"
-          className="px-4 py-2 tracking-wide  text-white font-bold bg-[#502108]"
+          className="px-4 py-2 tracking-wide hidden md:flex  text-white font-bold bg-[#502108]"
         >
           Book Now
         </a>
         <button
           onClick={() => setIsOpen(true)}
-          className="md:hidden text-tColor p-2 focus:outline-none"
+          className="md:hidden text-[#502108]  p-2 focus:outline-none"
           aria-label="Open Menu"
         >
           <DynamicIcons iconName="menu" />

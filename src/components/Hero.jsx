@@ -1,38 +1,59 @@
-import image from "../assets/image.jpeg";
+import image from "../assets/image3.jpg";
 import Button from "./Button";
 
 export default function Hero() {
   return (
-    <div>
-      <section
-        id="home"
-        className=" w-full flex flex-col md:flex-row justify-evenly items-center gap-8 pt-24 pb-16"
-      >
-        <div className="flex flex-col items-center sm:items-start">
-          <h1 className="font-serif text-6xl text-slate-800 text-center sm:text-start leading-none">
-            Name <span className="block mb-2">Name</span>
-            <p className=" text-[11px] md:text-base font-sans font-semibold text-slate-500 uppercase tracking-widest py-2">
-              Tagline Here
-            </p>
+    <section
+      id="home"
+      className="w-full flex flex-col md:flex-row justify-between items-center bg-[#919191] py-12 md:py-0 overflow-hidden"
+    >
+      {/* Content Container */}
+      <div className="flex flex-col items-center text-center px-6 sm:px-12 md:w-1/2 max-w-xl">
+        <section>
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white text-center sm:text-start leading-tight">
+            Authentic portraits that capture who{" "}
+            <span className="text-[#502108] italic">YOU</span> truly are
           </h1>
-          <Button
-            text="View Gallery"
-            hover="hover:text-blue"
-            rounded="rounded-md"
-            textColor="text-tColor"
-            bgColor="bg-blue-300"
-            textColor="text-black"
-            font="font-semibold"
-            link="#gallery"
-          />
-        </div>
 
+          <p className="mt-4 mb-4 text-xs sm:text-sm sm:text-start text-center md:text-base font-sans uppercase tracking-wider text-slate-700">
+            High-end editorial and lifestyle studio portraiture based in CITY
+          </p>
+        </section>
+
+        <Button
+          text="View Monthly Features"
+          hover="hover:text-blue"
+          borderColor="border-[#502108]"
+          border="border-2"
+          textColor="text-[#502108]"
+          font="font-semibold"
+          link="#gallery"
+          lg="lg:flex"
+          visibility="hidden"
+        />
+      </div>
+
+      {/* Image Container */}
+      <div className="w-full md:w-1/2 mt-4 md:mt-0 flex justify-center md:justify-end">
         <img
           src={image}
-          alt="Nail Art Design"
-          className=" max-w-md w-full h-auto object-cover  sm:w-lg"
+          alt="Portrait photography model"
+          className="w-full max-w-md md:max-w-lg h-auto object-cover max-h-150"
         />
-      </section>
-    </div>
+      </div>
+
+      <Button
+        text="View Monthly Features"
+        hover="hover:text-blue"
+        borderColor="border-[#502108]"
+        border="border-2"
+        textColor="text-[#502108]"
+        font="font-semibold"
+        link="#gallery"
+        lg="lg:hidden"
+        visibility="flex"
+        mt="mt-8"
+      />
+    </section>
   );
 }

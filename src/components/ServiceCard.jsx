@@ -1,8 +1,10 @@
-export default function ServiceCard({ image, title, description }) {
+import { ArrowUpRight } from "lucide-react";
+
+export default function ServiceCard({ image, title, description, link }) {
   return (
-    <div className="flex flex-col w-full max-w-75 overflow-hidden border rounded-md">
+    <div className="flex flex-col w-full max-w-75 overflow-hidden  ">
       {/* 1. Image (Clean and squared off at the top) */}
-      <div className="relative aspect-4/3 w-full overflow-hidden bg-slate-100">
+      <div className="relative aspect-square w-full overflow-hidden bg-brandPrimary">
         {image ? (
           <img src={image} alt={title} className="w-full h-full object-cover" />
         ) : (
@@ -13,14 +15,20 @@ export default function ServiceCard({ image, title, description }) {
         )}
       </div>
 
-      <div className=" px-5 py-4 flex flex-col grow">
-        <h3 className="font-sans font-bold text-2xl text-tColor mb-1 tracking-tight">
+      <div className="flex p-6 flex-col border-2 grow">
+        <h3 className="font-bold text-xl font-serif mb-1 tracking-tight">
           {title}
         </h3>
 
-        <p className="font-sans text-tDescColor text-base leading-relaxed">
-          {description}
-        </p>
+        <p className="font-sans text-base leading-relaxed">{description}</p>
+
+        <a
+          href={link}
+          className="mt-auto self-end inline-flex items-center gap-1 pt-6 font-semibold text-[#502108] hover:text-black transition-colors"
+        >
+          Learn more
+          <ArrowUpRight size={18} aria-hidden="true" />
+        </a>
       </div>
     </div>
   );

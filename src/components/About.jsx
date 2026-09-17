@@ -1,4 +1,4 @@
-import image from "../assets/image.jpeg";
+import image from "../assets/image7.jpg";
 export default function About() {
   return (
     <>
@@ -9,7 +9,7 @@ export default function About() {
         <img
           src={image}
           alt="About Image"
-          className="max-w-sm w-lg h-auto object-cover p-4 sm:w-100 sm:h-100 rounded-4xl"
+          className="max-w-sm w-lg h-auto object-cover p-4 sm:w-100 sm:h-100"
         />
         <div>
           <h1 className="font-black text-2xl text-center pb-4">About Us</h1>

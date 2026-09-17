@@ -4,7 +4,7 @@ export default function Header({ text, id }) {
       <div className="flex flex-col items-center">
         <h1
           id={id}
-          className="text-center py-2 font-sans font-bold text-3xl md:text-4xl mt-3"
+          className="text-center text-brandPrimary py-2 font-sans font-bold text-3xl md:text-4xl mt-3"
         >
           {text}
         </h1>
