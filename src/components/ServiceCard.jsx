@@ -24,7 +24,7 @@ export default function ServiceCard({ image, title, description, link }) {
 
         <a
           href={link}
-          className="mt-auto self-end inline-flex items-center gap-1 pt-6 font-semibold text-[#502108] hover:text-black transition-colors"
+          className="mt-auto self-end inline-flex items-center gap-1 pt-6 font-semibold text-brandPrimary hover:text-black transition-colors"
         >
           Learn more
           <ArrowUpRight size={18} aria-hidden="true" />

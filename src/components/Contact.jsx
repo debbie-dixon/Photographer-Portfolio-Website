@@ -5,20 +5,23 @@ export default function Contact() {
     <>
       <div
         id="contact"
-        className="w-full flex flex-col items-center justify-center mt-8 mb-10 gap-6"
+        className="w-full flex flex-col items-center justify-center mt-8 mb-10 gap-6 px-4"
       >
         {/* Row container: Stacked on mobile, side-by-side on desktop */}
-        <div className="flex flex-col md:flex-row md:items-start items-center justify-center gap-8 md:gap-16 mt-6 w-full max-w-4xl px-4">
-          <div className="flex flex-col items-center md:items-start  min-w-50">
+        <div className="flex flex-col md:flex-row md:items-start items-center justify-center gap-8 md:gap-14 lg:gap-20 mt-6 w-full max-w-5xl px-2 md:px-6">
+          <div className="flex flex-col items-center md:items-start min-w-50 text-center md:text-left">
+            <p className="font-bold font-serif text-2xl">Logo-Company</p> <br />
+            <h1 className="font-bold text-brandPrimary">Working Hours:</h1>
             <h1>
               Monday - Saturday:
-              <span className="font-semibold text-tColor"> Open</span>
+              <span className="font-semibold text-brandPrimary"> Open</span>
             </h1>
             <h1>
               Sunday:
-              <span className="font-semibold text-tColor"> Closed</span>
-            </h1>
-            <h1 className="font-bold">
+              <span className="font-semibold text-brandPrimary"> Closed</span>
+            </h1>{" "}
+            <br />
+            <h1 className="font-bold text-brandPrimary">
               Appointment Only - <br />{" "}
               <span className="font-medium text-sm text-center">
                 via DM or Website
@@ -27,21 +30,21 @@ export default function Contact() {
           </div>
 
           {/* Section 1: Phone & Email */}
-          <section className="flex flex-col items-center md:items-start space-y-3 min-w-50">
+          <section className="flex flex-col items-center md:items-start space-y-3 min-w-50 text-center md:text-left">
             <DynamicIcons text="08142067810" iconName="phone" />
             <DynamicIcons
               text="examplemail@gmail.com"
               iconName="mail"
-              link="mailto:blessingbiobeleabel@gmail.com"
+              link=""
             />
           </section>
 
           {/* Section 2: Location */}
-          <section className="flex flex-col items-center space-y-2 min-w-50">
+          <section className="flex flex-col items-center md:items-start space-y-2 min-w-50 text-center md:text-left">
             <DynamicIcons iconName="map-pin" size={18} />
-            <h1 className="text-sm text-center leading-relaxed">
-              Location, Port-Harcourt, <br />
-              Rivers State, Nigeria.
+            <h1 className="text-lg leading-relaxed">
+              Location, City/Town, <br />
+              State/Province, Country.
             </h1>
           </section>
 

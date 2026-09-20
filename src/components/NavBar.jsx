@@ -31,48 +31,51 @@ export default function NavBar() {
   return (
     <>
       <nav
-        className={`flex justify-between items-center gap-4 py-4 px-6 sticky top-0 left-0 w-full bg-[#c4bab3] shadow-sm mx-auto z-50 transition-transform duration-300 ${
+        className={`flex justify-between items-center gap-4 py-4 px-6 sticky top-0 left-0 w-full bg-brandSecondary shadow-sm mx-auto z-50 transition-transform duration-300 ${
           isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <p className="font-serif italic px-6 font-bold text-2xl text-[#502108]">
+        <p className="font-serif italic px-6 font-bold text-2xl text-brandPrimary">
           Logo
         </p>
         <div className="hidden md:flex gap-4 font-sans font-semibold items-center">
-          <a href="/" className="px-2 py-1 hover:bg-[#502108] hover:text-white">
+          <a
+            href="/"
+            className="px-2 py-1 hover:bg-brandPrimary hover:text-white"
+          >
             Home
           </a>
           <a
             href="#about"
-            className="px-2 py-1 hover:bg-[#502108] hover:text-white"
+            className="px-2 py-1 hover:bg-brandPrimary hover:text-white"
           >
             About
           </a>
           <a
             href="#services"
-            className="px-2 py-1 hover:bg-[#502108] hover:text-white"
+            className="px-2 py-1 hover:bg-brandPrimary hover:text-white"
           >
             Services
           </a>
           <a
             href="#contact"
-            className="px-2 py-1 hover:bg-[#502108] hover:text-white"
+            className="px-2 py-1 hover:bg-brandPrimary hover:text-white"
           >
             Contact
           </a>
         </div>
         <a
           href="#book"
-          className="px-4 py-2 tracking-wide hidden md:flex  text-white font-bold bg-[#502108]"
+          className="px-4 py-2 tracking-wide hidden md:flex  text-white font-bold bg-brandPrimary"
         >
           Book Now
         </a>
         <button
           onClick={() => setIsOpen(true)}
-          className="md:hidden text-[#502108]  p-2 focus:outline-none"
+          className="md:hidden text-brandPrimary  p-2 focus:outline-none"
           aria-label="Open Menu"
         >
-          <DynamicIcons iconName="menu" />
+          <DynamicIcons iconName="menu" color="#502108" />
         </button>
       </nav>
       {isOpen && (
@@ -92,7 +95,7 @@ export default function NavBar() {
           className=" p-2 focus:outline-none flex justify-end mb-8"
           aria-label="Close Menu"
         >
-          <DynamicIcons iconName="x" />
+          <DynamicIcons iconName="x" color="#502108" />
         </button>
         <SideMenu closeMenu={closeMenu} />
       </div>
