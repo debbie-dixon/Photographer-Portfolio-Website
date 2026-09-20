@@ -57,7 +57,7 @@ export default function Booking() {
     <>
       <Header text="Contact Us" id="book" />
       <div className="max-w-xl mx-auto bg-white p-8 rounded-2xl border border-slate-200 shadow-xs my-8">
-        <h2 className="text-2xl font-bold text-slate-900 mb-2">
+        <h2 className="text-2xl font-bold text-brandPrimary mb-2">
           Send us a message
         </h2>
         <p className="text-slate-600 mb-6 text-sm">
@@ -132,7 +132,7 @@ export default function Booking() {
           <button
             type="submit"
             disabled={status === "sending"}
-            className="w-full inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-medium px-4 py-3 rounded-lg text-sm transition-colors disabled:opacity-50"
+            className="w-full inline-flex items-center justify-center gap-2 bg-brandPrimary hover:bg-brandPrimary/90 text-white font-medium px-4 py-3  text-sm transition-colors disabled:opacity-50"
           >
             {status === "sending" ? (
               <>

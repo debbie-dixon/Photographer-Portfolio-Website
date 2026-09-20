@@ -5,12 +5,15 @@ export default function Contact() {
     <>
       <div
         id="contact"
-        className="w-full flex flex-col items-center justify-center mt-8 mb-10 gap-6 px-4"
+        className="w-full flex flex-col items-start justify-center border-t border-gray-200 mt-8 mb-10 gap-6 px-4"
       >
         {/* Row container: Stacked on mobile, side-by-side on desktop */}
         <div className="flex flex-col md:flex-row md:items-start items-center justify-center gap-8 md:gap-14 lg:gap-20 mt-6 w-full max-w-5xl px-2 md:px-6">
           <div className="flex flex-col items-center md:items-start min-w-50 text-center md:text-left">
-            <p className="font-bold font-serif text-2xl">Logo-Company</p> <br />
+            <p className="font-bold font-serif text-2xl text-brandPrimary">
+              Logo-Company
+            </p>{" "}
+            <br />
             <h1 className="font-bold text-brandPrimary">Working Hours:</h1>
             <h1>
               Monday - Saturday:
