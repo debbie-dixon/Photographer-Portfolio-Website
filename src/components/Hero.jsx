@@ -8,7 +8,7 @@ export default function Hero() {
       className="w-full min-h-125 flex flex-col md:flex-row justify-between items-center bg-[#919191] py-12 md:py-0 overflow-hidden"
     >
       {/* Content Container */}
-      <div className="flex flex-col items-center text-center px-6 sm:px-12 md:w-1/2 max-w-xl lg:items-start lg:text-left py-8">
+      <div className="flex flex-col items-center text-center px-6 sm:px-12 md:w-[42%] max-w-xl lg:items-start lg:text-left py-8">
         <div>
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white text-center sm:text-start leading-tight">
             Authentic portraits that capture who{" "}
@@ -34,11 +34,11 @@ export default function Hero() {
       </div>
 
       {/* Image Container - Stretched to Edge */}
-      <div className="w-full md:w-1/2 md:self-stretch flex justify-end">
+      <div className="mt-4 w-full md:mt-0 md:ml-auto md:w-[58%] md:self-stretch md:flex md:justify-end">
         <img
           src={image}
           alt="Portrait photography model"
-          className="w-full max-w-md md:max-w-none md:w-full h-auto md:h-full object-cover object-center"
+          className="w-full max-w-md md:max-w-none md:w-full md:h-full object-cover object-center"
         />
       </div>
 
