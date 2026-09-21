@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="w-full min-h-[580px] md:min-h-[600px] flex flex-col md:flex-row justify-between items-center bg-[#919191] pt-10 md:pt-0 px-6 sm:px-12 overflow-hidden relative"
+      className="w-full min-h-145 md:min-h-150 flex flex-col md:flex-row justify-between items-center bg-[#919191] pt-10 md:pt-0 px-6 sm:px-12 overflow-hidden relative"
     >
       {/* Top Text & CTA Block */}
       <div className="flex flex-col items-center text-center md:w-1/2 lg:max-w-xl md:items-start md:text-left z-10">
@@ -34,7 +34,7 @@ export default function Hero() {
         <img
           src={image}
           alt="Portrait photography model cutout"
-          className="w-auto h-[320px] xs:h-[360px] sm:h-[420px] md:h-[500px] lg:h-[560px] object-contain object-bottom drop-shadow-lg"
+          className="w-auto h-80 xs:h-[360px] sm:h-105 md:h-125 lg:h-140 object-contain object-bottom drop-shadow-lg"
         />
       </div>
     </section>
